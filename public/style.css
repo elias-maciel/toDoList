@@ -43,7 +43,20 @@ main {
     z-index: 2;
     backdrop-filter: blur(2rem);
     display: flex;
+    animation: fadeIn 2.5s linear;
 }
+@keyframes fadeIn {
+    0%{
+        transform: scale(0.7)
+    }
+    50%{
+        transform: scale(1.1)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+
 .circle1,
 .circle2{
     background: white;
@@ -53,7 +66,24 @@ main {
     height: 20rem;
     width: 20rem;
     position: absolute;
+    opacity: 70%;
     border-radius: 50%;
+    animation: ZoomInOut 3s linear infinite;
+}
+
+@keyframes ZoomInOut {
+    0%{
+        transform: scale(1);
+        opacity: 70%;
+    }
+    50%{
+        transform: scale(.85);
+        opacity: 50%;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 70%;
+    }
 }
 
 .circle1{
@@ -64,6 +94,7 @@ main {
     bottom: 5%;
     left: 10%;
 }
+
 .dashboard{
     flex: 1;
     display: flex;
@@ -98,8 +129,8 @@ main {
 
 .message img{
     position: absolute;
-    top: 5%;
-    right: 2%;
+    top: 3%;
+    right: 5%;
     height: 10rem;
     width: 10rem;
 }
