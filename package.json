@@ -1,0 +1,21 @@
+{
+  "name": "toDoList",
+  "version": "1.0.0",
+  "description": "Projeto de ToDoList realizado no BaseCamp da Cataline",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel ./src/main.js -o ./public/bundle.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elias-maciel/toDoList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elias-maciel/toDoList/issues"
+  },
+  "homepage": "https://github.com/elias-maciel/toDoList#readme",
+  "devDependencies": {}
+}
