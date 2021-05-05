@@ -1,0 +1,329 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #426696;
+    font-weight: 600;
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+  h2,
+  p {
+    color: #658ec6;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  
+  h3 {
+    color: #426696;
+    font-weight: 600;
+    opacity: 0.8;
+  }
+
+main {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(to right top,#65dfc9, #6cdbeb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass{
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(to right bottom, 
+    rgba(255,255,255, 0.7),
+    rgba(255,255,255, 0.3));
+    border-radius: 2rem;
+    z-index: 2;
+    display: flex;
+    animation: fadeIn 5s linear;
+    backdrop-filter: blur(2rem);
+}
+@keyframes fadeIn {
+    0%{
+        transform: scale(0.7)
+    }
+    50%{
+        transform: scale(1.1)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+
+.circle1,
+.circle2{
+    background: white;
+    background: linear-gradient(to right bottom, 
+    rgba(255,255,255, .8),
+    rgba(255,255,255, 0.3));
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    opacity: 70%;
+    border-radius: 50%;
+    animation: ZoomInOut 5s linear infinite;
+}
+
+@keyframes ZoomInOut {
+    0%{
+        transform: scale(1);
+        opacity: 70%;
+    }
+    50%{
+        transform: scale(.85);
+        opacity: 50%;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 70%;
+    }
+}
+
+.circle1{
+    top: 5%;
+    right: 15%;
+}
+.circle2{
+    bottom: 5%;
+    left: 10%;
+}
+
+.dashboard{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background: linear-gradient(to right bottom, 
+    rgba(255,255,255, 0.7),
+    rgba(255,255,255, 0.3));
+    border-radius: 2rem;
+}
+.link{
+    display: flex;
+    margin: 2rem 0rem;
+    padding: 1rem 5rem;
+    align-items: center;
+}
+.link h2{
+    padding: 0rem 2rem;
+}
+.TodoList{
+    flex: 2;
+}
+.message{
+    background: linear-gradient(to right top,#65dfc9, #6cdbeb);
+    border-radius: 2rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+}
+
+.message img{
+    position: absolute;
+    top: 3%;
+    right: 5%;
+    height: 10rem;
+    width: 10rem;
+}
+
+.message h2 {
+    width: 40%;
+    color: white;
+    font-weight: 600;
+  }
+
+/* --------------------Estilos do Todos----------------------------- */
+
+#app {
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: minmax(0px, 400px);
+    grid-gap: 2rem;
+  }
+  
+  form {
+    display: grid;
+    grid-gap: 1.5rem;
+  }
+  
+  form input {
+    background-color: white;
+    border: none;
+    border-radius: 0.9rem;
+    padding: 0.7rem;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    color: #426696;
+    box-sizing: border-box;
+  }
+  
+  form input::placeholder {
+    color: #426696;
+  }
+  
+  form button[type='submit'] {
+    background: linear-gradient(to right top,#65dfc9, #6cdbeb);
+    color: #ececf6;
+    border-radius: 2rem;
+    border: none;
+    outline: none;
+    width: max-content;
+    padding: 0.7rem 1.5rem;
+    padding-right: 2.5rem;
+    position: relative;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+  }
+  
+  form button[type='submit']:hover {
+    background: linear-gradient(to right top,#65dfc9, #6cdbeb)
+  }
+  
+  form .checkbox-input {
+    margin-left: 0.5rem;
+  }
+  
+  form button[type='submit']:after {
+    content: '+';
+    position: absolute;
+    right: 1.2rem;
+    font-size: 20px;
+    font-weight: 100;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .todos {
+    padding: 0;
+    display: grid;
+    grid-gap: 0.5rem;
+  }
+  
+  .todos-title {
+    color: #ececf6;
+  }
+  
+  .todo {
+    color: #ececf6;
+    background-color: #65dfc9;
+    padding: 1rem;
+    border-radius: 0.9rem;
+    display: grid;
+    grid-template-columns: max-content 1fr auto;
+    justify-content: start;
+    grid-gap: 0.3rem;
+  }
+  
+  .todo .todo-text {
+    width: max-content;
+    color: #8b98a8;
+    align-self: center;
+  }
+  
+  .todo .todo-delete {
+    background-color: #d53e6b;
+    width: 24px;
+    height: 24px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    position: relative;
+  }
+  
+  .todo .todo-delete:before,
+  .todo .todo-delete:after {
+    content: '';
+    width: 3px;
+    height: 13px;
+    background-color: #ececf6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  
+  .todo .todo-delete:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .todo .todo-delete:after {
+    transform: translate(-50%, -50%) rotate(130deg);
+  }
+  
+  .todo .todo-delete:hover {
+    background-color: #984848;
+  }
+  
+  .todo.done .todo-text {
+    text-decoration: line-through;
+  }
+  
+  /* checkbox */
+  .checkbox-input {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: max-content;
+    color: #ececf6;
+  }
+  
+  .checkbox-input input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 1px solid #ececf6;
+    border-radius: 0.4rem;
+  }
+  
+  .checkbox-input input:checked ~ .checkmark {
+    background: linear-gradient(to right top,#65dfc9, #6cdbeb);
+    border: none;
+  }
+  
+  .checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-input input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkbox-input .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 4px;
+    height: 8px;
+    border: solid #ececf6;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

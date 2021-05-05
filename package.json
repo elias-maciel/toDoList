@@ -4,7 +4,8 @@
   "description": "Projeto de ToDoList realizado no BaseCamp da Cataline",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack"
+    "dev": "webpack serve --mode=development",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,14 @@
   "homepage": "https://github.com/elias-maciel/toDoList#readme",
   "devDependencies": {
     "@babel/polyfill": "^7.12.1",
+    "css-loader": "^5.2.4",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "vue": "^3.0.11"
   }
 }
